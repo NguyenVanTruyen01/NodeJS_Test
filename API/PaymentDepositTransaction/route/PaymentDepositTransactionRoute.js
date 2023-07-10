@@ -73,14 +73,14 @@ module.exports = {
   find: {
     tags: ['api', `${moduleName}`],
     description: `update ${moduleName}`,
-    pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
-    auth: {
-      strategy: 'jwt',
-    },
+    // pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
+    // auth: {
+    //   strategy: 'jwt',
+    // },
     validate: {
-      headers: Joi.object({
-        authorization: Joi.string(),
-      }).unknown(),
+      // headers: Joi.object({
+      //   authorization: Joi.string(),
+      // }).unknown(),
       payload: Joi.object({
         filter: Joi.object(filterSchema),
         startDate: Joi.string(),

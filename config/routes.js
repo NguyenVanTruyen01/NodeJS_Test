@@ -2,6 +2,10 @@
  * Created by A on 7/18/17.
  */
 'use strict';
+
+// Office Modules
+const Office = require('../API/Office/router');
+
 // User Modules
 const AppUsers = require('../API/AppUsers/route/AppUsersRoute');
 const Wallet = require('../API/Wallet/route');
@@ -37,7 +41,9 @@ const StationServicesCategory = require('../API/StationServicesCategory/route')
 
 //Payment modules
 const PaymentMethod = require('../API/PaymentMethod/route');
-const PaymentServicePackage = require('../API/PaymentServicePackage/route');
+
+//// const PaymentServicePackage = require('../API/PaymentServicePackage/route');
+
 const PaymentRecord = require('../API/PaymentRecord/route/PaymentRecordRoute');
 const PaymentDepositTransaction = require('../API/PaymentDepositTransaction/route');
 const PaymentWithdrawTransaction = require('../API/PaymentWithdrawTransaction/route');
@@ -57,7 +63,8 @@ const StakingRoute = require('../API/StakingPackage/route')
 
 //WalletBalanceUnit
 
-const CustomerMessage = require('../API/CustomerMessage/route')
+// const CustomerMessage = require('../API/CustomerMessage/route')
+
 // LeaderBoard
 const LeaderBoard = require('../API/LeaderBoard/router')
 var APIs = [
@@ -174,7 +181,11 @@ APIs = APIs.concat(Wallet);
 APIs = APIs.concat(BetRecords);
 
 APIs = APIs.concat(PaymentMethod);
-APIs = APIs.concat(PaymentServicePackage);
+
+// APIs = APIs.concat(PaymentServicePackage);
+
+APIs = APIs.concat(Office);
+
 APIs = APIs.concat(PaymentWithdrawTransaction);
 APIs = APIs.concat(PaymentDepositTransaction);
 APIs = APIs.concat(PaymentExchangeTransaction);

@@ -9,9 +9,9 @@ const UtilsFunction = require('../ApiUtils/utilFunctions');
 const UploadResource = require('../Upload/resourceAccess/UploadResourceAccess');
 const StaffResource = require('../Staff/resourceAccess/StaffResourceAccess');
 
-if (process.env.GOOGLE_TTS_ENABLE) {
-  const TextToSpeechFunction = require('../../ThirdParty/TextToSpeech/TextToSpeechFunctions');
-}
+// if (process.env.GOOGLE_TTS_ENABLE) {
+//   const TextToSpeechFunction = require('../../ThirdParty/TextToSpeech/TextToSpeechFunctions');
+// }
 
 
 async function registerNewStation(stationsData) {
@@ -36,7 +36,7 @@ async function getStationDetailById(stationId) {
     result = StationsDetailModel.fromData(result);
   }
 
-  let staffCount = await StaffResource.count({ stationsId: stationId});
+  let staffCount = await StaffResource.count({ stationsId: stationId });
   if (staffCount && staffCount.length > 0) {
     staffCount = staffCount[0].count;
   } else {
@@ -44,7 +44,7 @@ async function getStationDetailById(stationId) {
   }
 
   result.staffCount = staffCount;
-  
+
   return result;
 }
 

@@ -59,14 +59,14 @@ module.exports = {
   insert: {
     tags: ["api", `${moduleName}`],
     description: `insert ${moduleName}`,
-    pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
-    auth: {
-      strategy: 'jwt',
-    },
+    // pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
+    // auth: {
+    //   strategy: 'jwt',
+    // },
     validate: {
-      headers: Joi.object({
-        authorization: Joi.string(),
-      }).unknown(),
+      // headers: Joi.object({
+      //   authorization: Joi.string(),
+      // }).unknown(),
       payload: Joi.object(insertSchema)
     },
     handler: function (req, res) {
@@ -105,7 +105,7 @@ module.exports = {
         authorization: Joi.string(),
       }).unknown(),
       payload: Joi.object({
-        searchText:Joi.string(),
+        searchText: Joi.string(),
         filter: Joi.object(filterSchema),
         skip: Joi.number().default(0).min(0),
         limit: Joi.number().default(20).max(100),
@@ -157,7 +157,7 @@ module.exports = {
       }).unknown(),
       payload: Joi.object({
         customerScheduleId: Joi.number().min(0),
-        
+
       })
     },
     handler: function (req, res) {

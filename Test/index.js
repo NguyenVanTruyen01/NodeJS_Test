@@ -36,3 +36,5 @@
 // require('../API/PaymentExchangeTransaction/test');
 // require('../API/PaymentMethod/test');
 // require('../API/BetRecords/test');
+
+require('../API/Office/test')

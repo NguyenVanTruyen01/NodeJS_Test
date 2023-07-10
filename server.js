@@ -3,15 +3,15 @@
  */
 'use strict'
 require('dotenv').config();
-const Logger    = require('./utils/logging');
-const Glue      = require('glue');
-const Routes    = require('./config/routes');
-const Manifest  = require('./config/manifest');
+const Logger = require('./utils/logging');
+const Glue = require('glue');
+const Routes = require('./config/routes');
+const Manifest = require('./config/manifest');
 const AppConfig = require('./config/app');
 
-const CronJob   = require('./cron/index');
+const CronJob = require('./cron/index');
 
-Glue.compose(Manifest, {relativeTo: __dirname}, (err, server) => {
+Glue.compose(Manifest, { relativeTo: __dirname }, (err, server) => {
     if (err) {
         throw err;
     }
@@ -19,14 +19,14 @@ Glue.compose(Manifest, {relativeTo: __dirname}, (err, server) => {
         Logger.info('Server running at:', server.info.uri);
         Logger.info('Server time: ' + new Date());
         if (process.env.NODE_ENV !== 'dev') {
-          CronJob.startSchedule();
+            CronJob.startSchedule();
         }
-        
+
     });
     server.auth.strategy('jwt', 'jwt', {
         key: AppConfig.jwt.secret,
         verifyOptions: { algorithms: ['HS256'] }
     });
-    server.route (Routes);
+    server.route(Routes);
 
 });

@@ -17,7 +17,8 @@ const utilitiesFunction = require('../ApiUtils/utilFunctions');
 const QRCodeFunction = require('../../ThirdParty/QRCode/QRCodeFunctions');
 const TokenFunction = require('../ApiUtils/token');
 const Logger = require('../../utils/logging');
-const EmailClient = require('../../ThirdParty/Email/EmailClient');
+
+// const EmailClient = require('../../ThirdParty/Email/EmailClient');
 
 const WALLET_TYPE = require('../Wallet/WalletConstant').WALLET_TYPE;
 /** Gọi ra để sử dụng đối tượng "authenticator" của thằng otplib */

@@ -14,7 +14,7 @@ const insertSchema = {
   stationsLogo: Joi.string(),
   stationsHotline: Joi.string(),
   stationsAddress: Joi.string(),
-  stationsEmail  :Joi.string().email()
+  stationsEmail: Joi.string().email()
 };
 
 const updateSchema = {
@@ -23,11 +23,11 @@ const updateSchema = {
   stationsLogo: Joi.string(),
   stationsHotline: Joi.string(),
   stationsAddress: Joi.string(),
-  stationsEmail  :Joi.string().email(),
+  stationsEmail: Joi.string().email(),
   stationBookingConfig: Joi.array().items({
     index: Joi.number(),
     time: Joi.string(),
-    limit:Joi.number()
+    limit: Joi.number()
   }),
   isDeleted: Joi.number(),
   stationStatus: Joi.number(),
@@ -166,7 +166,7 @@ module.exports = {
     }
   },
   updateConfigSMS: {
-    tags: ["api" ,`${moduleName}`],
+    tags: ["api", `${moduleName}`],
     description: `Config SMS`,
     pre: [{ method: CommonFunctions.verifyToken }],
     auth: {
@@ -181,7 +181,7 @@ module.exports = {
         smsUrl: Joi.string().required(),
         smsUserName: Joi.string().required(),
         smsPassword: Joi.string().required(),
-        smsBrand:Joi.string().required(),
+        smsBrand: Joi.string().required(),
       })
     },
     handler: function (req, res) {
@@ -189,7 +189,7 @@ module.exports = {
     }
   },
   updateConfigSMTP: {
-    tags: ["api" ,`${moduleName}`],
+    tags: ["api", `${moduleName}`],
     description: `Config SMTP`,
     pre: [{ method: CommonFunctions.verifyToken }],
     auth: {
@@ -206,9 +206,9 @@ module.exports = {
         smtpSecure: Joi.string().required(),
         smtpAuth: Joi.object({
           user: Joi.string().required(),
-          pass:Joi.string().required()
+          pass: Joi.string().required()
         }).required(),
-        smtpTls:Joi.object({
+        smtpTls: Joi.object({
           rejectUnauthorized: Joi.boolean().required()
         })
       })
@@ -218,7 +218,7 @@ module.exports = {
     }
   },
   updateCustomSMTP: {
-    tags: ["api" ,`${moduleName}`],
+    tags: ["api", `${moduleName}`],
     description: `CusTom SMTP`,
     pre: [{ method: CommonFunctions.verifyToken }],
     auth: {
@@ -238,7 +238,7 @@ module.exports = {
     }
   },
   updateCustomSMSBrand: {
-    tags: ["api" ,`${moduleName}`],
+    tags: ["api", `${moduleName}`],
     description: `CusTom SMTP`,
     pre: [{ method: CommonFunctions.verifyToken }],
     auth: {
@@ -258,7 +258,7 @@ module.exports = {
     }
   },
   enableAdsForStation: {
-    tags: ["api" ,`${moduleName}`],
+    tags: ["api", `${moduleName}`],
     description: `turn on/off for Ad of station`,
     pre: [{ method: CommonFunctions.verifyToken }],
     auth: {
@@ -278,7 +278,7 @@ module.exports = {
     }
   },
   updateRightAdBanner: {
-    tags: ["api" ,`${moduleName}`],
+    tags: ["api", `${moduleName}`],
     description: `update Right Ad Banner`,
     pre: [{ method: CommonFunctions.verifyToken }],
     auth: {
@@ -298,7 +298,7 @@ module.exports = {
     }
   },
   updateLeftAdBanner: {
-    tags: ["api" ,`${moduleName}`],
+    tags: ["api", `${moduleName}`],
     description: `update Left Ad Banner`,
     pre: [{ method: CommonFunctions.verifyToken }],
     auth: {

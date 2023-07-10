@@ -7,6 +7,7 @@
 const Handlebars = require('handlebars');
 
 const CustomerMessageResourceAccess = require('./resourceAccess/CustomerMessageResourceAccess');
+
 // const MessageCustomerResourceAccess = require('./resourceAccess/MessageCustomerResourceAccess');
 
 const ApiUtilsFunctions = require('../ApiUtils/utilFunctions');
@@ -17,10 +18,12 @@ const {
   MESSAGE_CATEGORY,
   MESSAGE_RECEIVER,
 } = require('./CustomerMessageConstant');
-const {
-  pushNotificationByTopic,
-  pushNotificationByTokens,
-} = require('../../ThirdParty/FirebaseNotification/FirebaseNotificationFunctions');
+
+// const {
+//   pushNotificationByTopic,
+//   pushNotificationByTokens,
+// } = require('../../ThirdParty/FirebaseNotification/FirebaseNotificationFunctions');
+
 const AppUsersResourceAccess = require('../AppUsers/resourceAccess/AppUsersResourceAccess');
 
 const Logger = require('../../utils/logging');

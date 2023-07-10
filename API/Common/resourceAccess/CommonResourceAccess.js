@@ -21,6 +21,7 @@ function createOrReplaceView(viewName, viewDefinition) {
 
 async function insert(tableName, data) {
   let result = undefined;
+
   try {
     result = await DB(tableName).insert(data);
 
@@ -330,6 +331,7 @@ async function deleteById(tableName, id) {
   }
   return result;
 }
+
 async function incrementInt(tableName, key, id, field, amount) {
   let result = undefined;
   try {

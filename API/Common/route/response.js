@@ -22,7 +22,8 @@ module.exports = {
           let responseData = errorCodes[200];
           if (data !== undefined) {
             responseData.data = data;
-            reply(responseData).code(200);
+            return "adghasghdgsah"
+            // reply(responseData).code(200);
           } else {
             reply(errorCodes[500]).code(500);
           }

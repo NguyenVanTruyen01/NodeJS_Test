@@ -5,7 +5,7 @@ const PaymentServiceBonusPackage = require('./PaymentServiceBonusPackageRoute');
 const UserPaymentServicePackageRoute = require('./UserPaymentServicePackageRoute');
 
 module.exports = [
-  { method: 'POST', path: '/PaymentServicePackage/insert', config: PaymentServicePackage.insert },
+  // { method: 'POST', path: '/PaymentServicePackage/insert', config: PaymentServicePackage.insert },
   { method: 'POST', path: '/PaymentServicePackage/updateById', config: PaymentServicePackage.updateById },
   { method: 'POST', path: '/PaymentServicePackage/find', config: PaymentServicePackage.find },
   { method: 'POST', path: '/PaymentServicePackage/findById', config: PaymentServicePackage.findById },

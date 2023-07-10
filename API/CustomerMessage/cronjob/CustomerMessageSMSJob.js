@@ -10,7 +10,9 @@ const Joi = require('joi');
 const CustomerMessage = require('../resourceAccess/CustomerMessageResourceAccess');
 const CustomerRecord = require('../../CustomerRecord/resourceAccess/CustomerRecordResourceAccess');
 const { MESSAGE_STATUS, MESSAGE_CATEGORY } = require('../CustomerMessageConstant');
-const SMSAPIClientFunctions = require('../../../ThirdParty/SMSAPIClient/SMSAPIClientFunctions');
+
+//// const SMSAPIClientFunctions = require('../../../ThirdParty/SMSAPIClient/SMSAPIClientFunctions');
+
 const MessageFunction = require('../CustomerMessageFunctions');
 const Logger = require('../../../utils/logging');
 

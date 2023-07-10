@@ -6,7 +6,8 @@ const StationProductsResourceAccess = require("../resourceAccess/StationProducts
 const StationsResourceAccess = require('../../Stations/resourceAccess/StationsResourceAccess')
 const Logger = require('../../../utils/logging');
 const formatDate = require("../../ApiUtils/utilFunctions")
-const ImageUtils = require('../../ApiUtils/imageUtilsFunctions');
+
+//// const ImageUtils = require('../../ApiUtils/imageUtilsFunctions');
 
 async function insert(req) {
   return new Promise(async (resolve, reject) => {
@@ -16,7 +17,7 @@ async function insert(req) {
       if (req.currentUser.stationsId) {
         stationProductsData.stationsId = req.currentUser.stationsId;
       }
-      
+
 
       //xu ly cap nhat thumbnail neu co update avatar
       if (stationProductsData.stationProductsAvatar) {
@@ -25,7 +26,7 @@ async function insert(req) {
           stationProductsData.stationProductsAvatarThumbnails = _thumbnailsUrl;
         }
       }
-      
+
       let result = await StationProductsResourceAccess.insert(stationProductsData);
       if (result) {
         resolve(result);
@@ -58,7 +59,7 @@ async function find(req) {
       if (!filter) {
         filter = {}
       }
-      
+
       let stationProducts = await StationProductsResourceAccess.customSearch(filter, skip, limit, startDate, endDate, searchText, order);
       let stationProductsCount = await StationProductsResourceAccess.customCount(filter, startDate, endDate, searchText, order);
       if (stationProducts && stationProductsCount) {
