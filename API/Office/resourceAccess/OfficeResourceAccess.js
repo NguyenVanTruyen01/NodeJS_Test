@@ -88,10 +88,10 @@ async function updateById(id, data) {
 }
 async function findById(id) {
   let dataId = {};
-  console.log("sadsadsadas");
   dataId[primaryKeyField] = id;
   return await Common.findById(tableName, dataId, id);
 }
+
 function _makeQueryBuilderByFilter(filter, skip, limit, location, capacity, searchText) {
   let queryBuilder = DB(tableName);
   let filterData = filter ? JSON.parse(JSON.stringify(filter)) : {};

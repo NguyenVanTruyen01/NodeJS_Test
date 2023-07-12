@@ -27,6 +27,7 @@ Glue.compose(Manifest, { relativeTo: __dirname }, (err, server) => {
         key: AppConfig.jwt.secret,
         verifyOptions: { algorithms: ['HS256'] }
     });
+
     server.route(Routes);
 
 });

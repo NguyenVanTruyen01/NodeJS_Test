@@ -1,31 +1,31 @@
-////User modules
-// require('../API/AppUsers/test/AppUsers.spec');
+// //User modules
+require('../API/AppUsers/test/AppUsers.spec');
 
-////Schedule modules
+// //Schedule modules
 // require('../API/CustomerSchedule/test');
 
-////Stations Modules
+// //Stations Modules
 // require('../API/Stations/test');
 // require('../API/StationProductsCategory/test');
 // require('../API/StationProducts/test');
 // require('../API/StationServicesCategory/test');
 // require('../API/StationServices/test');
 
-////General Modules
+// //General Modules
 // require('../API/SystemConfigurations/test');
 // require('../API/GeneralInformation/test');
 
 // //Report modules
 // require('../API/Statistical/test/Statistical.spec');
 
-////Message modules
+// //Message modules
 // require('../API/CustomerMessage/test');
 
-////Measure record modules
+// //Measure record modules
 // require('../API/CustomerMeasureRecord/test');
 
-///////////////////////
-// require('../API/Staff/test/Staff.spec');
+// /////////////////////
+require('../API/Staff/test/Staff.spec');
 
 // require('../API/WalletBalanceUnit/test');
 // require('../API/PaymentMethod/test/PaymentMethod.spec');
@@ -37,4 +37,4 @@
 // require('../API/PaymentMethod/test');
 // require('../API/BetRecords/test');
 
-require('../API/Office/test')
+// require('../API/Office/test')

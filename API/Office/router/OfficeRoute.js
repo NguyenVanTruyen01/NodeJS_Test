@@ -39,14 +39,14 @@ module.exports = {
   insert: {
     tags: ['api', `${moduleName}`],
     description: `insert ${moduleName}`,
-    // pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
-    // auth: {
-    //   strategy: 'jwt',
-    // },
+    pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
+    auth: {
+      strategy: 'jwt',
+    },
     validate: {
-      // headers: Joi.object({
-      //   authorization: Joi.string(),
-      // }).unknown(),
+      headers: Joi.object({
+        authorization: Joi.string(),
+      }).unknown(),
       payload: Joi.object(insertSchema),
     },
     handler: function (req, res) {
@@ -57,14 +57,14 @@ module.exports = {
   updateById: {
     tags: ['api', `${moduleName}`],
     description: `update ${moduleName}`,
-    // pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
-    // auth: {
-    //   strategy: 'jwt',
-    // },
+    pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
+    auth: {
+      strategy: 'jwt',
+    },
     validate: {
-      // headers: Joi.object({
-      //   authorization: Joi.string(),
-      // }).unknown(),
+      headers: Joi.object({
+        authorization: Joi.string(),
+      }).unknown(),
       payload: Joi.object({
         id: Joi.number().min(0),
         data: Joi.object(updateSchema),
@@ -80,14 +80,14 @@ module.exports = {
   find: {
     tags: ['api', `${moduleName}`],
     description: `find ${moduleName}`,
-    // pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
-    // auth: {
-    //   strategy: 'jwt',
-    // },
+    pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
+    auth: {
+      strategy: 'jwt',
+    },
     validate: {
-      // headers: Joi.object({
-      //   authorization: Joi.string(),
-      // }).unknown(),
+      headers: Joi.object({
+        authorization: Joi.string(),
+      }).unknown(),
       payload: Joi.object({
         filter: Joi.object(filterSchema),
         skip: Joi.number().default(0).min(0),
@@ -123,14 +123,14 @@ module.exports = {
   deleteById: {
     tags: ['api', `${moduleName}`],
     description: `delete ${moduleName}`,
-    // pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
-    // auth: {
-    //   strategy: 'jwt',
-    // },
+    pre: [{ method: CommonFunctions.verifyToken }, { method: CommonFunctions.verifyStaffToken }],
+    auth: {
+      strategy: 'jwt',
+    },
     validate: {
-      // headers: Joi.object({
-      //   authorization: Joi.string(),
-      // }).unknown(),
+      headers: Joi.object({
+        authorization: Joi.string(),
+      }).unknown(),
       payload: Joi.object({
         id: Joi.number().min(0),
       }),

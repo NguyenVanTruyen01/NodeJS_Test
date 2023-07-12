@@ -95,12 +95,15 @@ async function updateById(req) {
 async function findById(req) {
   return new Promise(async (resolve, reject) => {
     try {
+
       let officeId = req.payload.id;
-      let result = await OfficeResourceAccess.find({ officeId: officeId });
+      console.log("findById", officeId)
+      let result = await OfficeResourceAccess.findById(officeId);
+
+      console.log("result", result[0])
 
       if (result && result.length > 0) {
-        let product = result[0];
-        resolve(product);
+        resolve(result);
       } else {
         console.error(`error office findById with id ${productId}: ${ERROR}`);
         reject('failed');

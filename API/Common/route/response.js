@@ -22,17 +22,16 @@ module.exports = {
           let responseData = errorCodes[200];
           if (data !== undefined) {
             responseData.data = data;
-            return "adghasghdgsah"
-            // reply(responseData).code(200);
+            reply.response(responseData).code(200);
           } else {
-            reply(errorCodes[500]).code(500);
+            reply.response(errorCodes[500]).code(500);
           }
         })
         .catch(data => {
           Logger.error(data);
           let error = errorCodes[500];
           error.error = data;
-          reply(error).code(500);
+          reply.response(error).code(500);
         });
     };
   },

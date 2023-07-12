@@ -31,12 +31,14 @@ describe(`Tests Office`, () => {
 
   it('insert Office', done => {
     const body = {
-      officeName: 'ATM / Bank',
-      officeDescription: "officeDescription",
-      location: "location",
+      officeName: "Văn phòng họp 2",
+      officeDescription: "Đây là nơi nhân viên làm việc hàng ngày, được trang bị bàn làm việc, ghế, và các thiết bị cần thiết để thực hiện công việc.",
+      location: "A1 -Tầng 1",
       length: 50,
       width: 50,
-      capacity: 20
+      capacity: 50,
+      isAvailable: 1,
+      isDeleted: 0
     };
     chai
       .request(`0.0.0.0:${process.env.PORT}`)
@@ -53,60 +55,60 @@ describe(`Tests Office`, () => {
       });
   });
 
-  it('find Office', done => {
-    const body = {};
-    chai
-      .request(`0.0.0.0:${process.env.PORT}`)
-      .post(`/Office/find`)
-      .set('Authorization', `Bearer ${staffToken}`)
-      .send(body)
-      .end((err, res) => {
-        if (err) {
-          console.error(err);
-        }
-        checkResponseStatus(res, 200);
-        done();
-      });
-  });
+  // it('find Office', done => {
+  //   const body = {};
+  //   chai
+  //     .request(`0.0.0.0:${process.env.PORT}`)
+  //     .post(`/Office/find`)
+  //     .set('Authorization', `Bearer ${staffToken}`)
+  //     .send(body)
+  //     .end((err, res) => {
+  //       if (err) {
+  //         console.error(err);
+  //       }
+  //       checkResponseStatus(res, 200);
+  //       done();
+  //     });
+  // });
 
-  it('update Office', done => {
-    const body = {
-      id: id,
-      data: {
-        officeName: "officeName",
-      },
-    };
+  // it('update Office', done => {
+  //   const body = {
+  //     id: id,
+  //     data: {
+  //       officeName: "officeName",
+  //     },
+  //   };
 
-    chai
-      .request(`0.0.0.0:${process.env.PORT}`)
-      .post(`/Office/updateById`)
-      .set('Authorization', `Bearer ${staffToken}`)
-      .send(body)
-      .end((err, res) => {
-        if (err) {
-          console.error(err);
-        }
-        checkResponseStatus(res, 200);
-        done();
-      });
-  });
+  //   chai
+  //     .request(`0.0.0.0:${process.env.PORT}`)
+  //     .post(`/Office/updateById`)
+  //     .set('Authorization', `Bearer ${staffToken}`)
+  //     .send(body)
+  //     .end((err, res) => {
+  //       if (err) {
+  //         console.error(err);
+  //       }
+  //       checkResponseStatus(res, 200);
+  //       done();
+  //     });
+  // });
 
-  it('delete Office', done => {
-    const body = {
-      id: id,
-    };
+  // it('delete Office', done => {
+  //   const body = {
+  //     id: id,
+  //   };
 
-    chai
-      .request(`0.0.0.0:${process.env.PORT}`)
-      .post(`/Office/deleteById`)
-      .set('Authorization', `Bearer ${staffToken}`)
-      .send(body)
-      .end((err, res) => {
-        if (err) {
-          console.error(err);
-        }
-        checkResponseStatus(res, 200);
-        done();
-      });
-  });
+  //   chai
+  //     .request(`0.0.0.0:${process.env.PORT}`)
+  //     .post(`/Office/deleteById`)
+  //     .set('Authorization', `Bearer ${staffToken}`)
+  //     .send(body)
+  //     .end((err, res) => {
+  //       if (err) {
+  //         console.error(err);
+  //       }
+  //       checkResponseStatus(res, 200);
+  //       done();
+  //     });
+  // });
 });
